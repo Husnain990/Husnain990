@@ -1,6 +1,6 @@
 import React from "react";
 
-const Bookmark = () => {
+const Calendar = () => {
   return (
     <>
       <svg
@@ -10,18 +10,17 @@ const Bookmark = () => {
         strokeWidth={1.5}
         stroke="currentColor"
         className="size-6"
-        width={25}
-        height={25}
+        width={15}
+        height={15}
       >
         <path
-          strokeWidth="3px"
           strokeLinecap="round"
           strokeLinejoin="round"
-          d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z"
+          d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"
         />
       </svg>
     </>
   );
 };
 
-export default Bookmark;
+export default Calendar;

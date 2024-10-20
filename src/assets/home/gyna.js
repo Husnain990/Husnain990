@@ -1,6 +1,6 @@
 import React from "react";
 
-const Bookmark = () => {
+const Gyna = () => {
   return (
     <>
       <svg
@@ -9,19 +9,15 @@ const Bookmark = () => {
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="size-6"
-        width={25}
-        height={25}
       >
         <path
-          strokeWidth="3px"
           strokeLinecap="round"
           strokeLinejoin="round"
-          d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z"
+          d="M8.25 6.75 12 3m0 0 3.75 3.75M12 3v18"
         />
       </svg>
     </>
   );
 };
 
-export default Bookmark;
+export default Gyna;

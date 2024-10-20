@@ -1,6 +1,7 @@
 import React from "react";
 
-const ArrowRight = () => {
+const ArrowRight = (props) => {
+  const { color } = props;
   return (
     <>
       <svg
@@ -8,8 +9,8 @@ const ArrowRight = () => {
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={1.5}
-        stroke="currentColor"
-        className="size-6"
+        stroke={color ? color : "currentColor"}
+        className={`size-6`}
         width={50}
         height={50}
       >
