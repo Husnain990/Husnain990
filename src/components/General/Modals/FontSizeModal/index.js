@@ -18,14 +18,14 @@ const Modal = (props) => {
       />
 
       <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
-        <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+        <div className="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
           <DialogPanel
             transition
-            className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:my-8 sm:w-full sm:max-w-lg data-[closed]:sm:translate-y-0 data-[closed]:sm:scale-95"
+            className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:my-8 w-full sm:max-w-lg data-[closed]:sm:translate-y-0 data-[closed]:sm:scale-95"
           >
             <div className="bg-sky-100">
-              <div className="sm:flex sm:items-start">
-                <div className="mt-3 text-center sm:mt-0 sm:text-left w-full">
+              <div className="flex items-start">
+                <div className="mt-0 text-center sm:text-left w-full">
                   <DialogTitle
                     as="h3"
                     className="text-base font-medium px-2 py-3 leading-6 text-white bg-darkPurple"
@@ -49,7 +49,7 @@ const Modal = (props) => {
                 </div>
               </div>
             </div>
-            <div className="bg-sky-100 px-4 py-3 sm:flex sm:flex-row-reverse sm:gap-2 sm:px-2">
+            <div className="bg-sky-100 px-4 py-3 flex flex-row-reverse gap-2">
               <button
                 type="button"
                 onClick={handleClose}

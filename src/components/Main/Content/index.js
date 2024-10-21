@@ -24,7 +24,7 @@ const Content = () => {
 
   const answerPercentage = 17;
   return (
-    <div className="flex w-full gap-4 mt-4 mr-4 lg:flex-nowrap flex-wrap pl-[64px] py-[80px]">
+    <div className="flex w-full gap-4 mt-4 mr-4 lg:flex-nowrap flex-wrap pl-[44px] sm:pl-[64px] py-[80px]">
       {/* Question Section */}
       <div className="xl:w-3/4 lg:w-3/4 w-full">
         <p className="border mb-4 drop-shadow-md bg-white p-4 rounded shadow-md text-red-800">
@@ -36,17 +36,17 @@ const Content = () => {
         <div className="space-y-4">
           {/* Explanation Box */}
           <div>
-            <div className="flex gap-5">
-              <span className="block w-20 p-2 border shadow-lg rounded-lg text-red-900 bg-white text-center font-extrabold text-xl">
+            <div className="flex gap-3 sm:gap-5">
+              <span className="block w-10 sm:w-20 p-2 border shadow-lg rounded-lg text-red-900 bg-white text-center font-extrabold text-md sm:text-xl">
                 A
               </span>
-              <button className="block w-full m-0 border shadow-lg rounded-lg relative z-0 bg-white hover:scale-x-[0.98] duration-300">
+              <button className="block w-full m-0 border shadow-lg rounded-lg relative z-0 bg-white hover:scale-x-[0.98] duration-300 text-sm sm:text-xl">
                 <div
                   className="bg-red-800 text-black text-center m-0 rounded-lg absolute h-full top-0 -z-10"
                   style={{ width: `${answerPercentage}%` }}
                 />
                 Reticulum
-                <p className="absolute right-4 top-2 bg-red-600 w-[50px] rounded-full text-white opacity-80">
+                <p className="absolute right-4 top-2 bg-red-600 w-[40px] sm:w-[50px] rounded-full text-white opacity-80 text-[12px] sm:text-xl">
                   {answerPercentage}%
                 </p>
               </button>
@@ -55,15 +55,15 @@ const Content = () => {
               <p className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-xl">
                 Explanation Box
               </p>
-              <div className="absolute bottom-2 w-[97%] bg-white rounded-md">
+              <div className="absolute bottom-2 w-[90%] sm:w-[97%] bg-white rounded-md">
                 <div className="flex gap-4 items-center h-10">
                   <Image
                     src="https://images.pexels.com/photos/139398/thermometer-headache-pain-pills-139398.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                     width={30}
                     height={10}
-                    className="ml-16"
+                    className="ml-5 sm:ml-16"
                   />
-                  <p className="basis-11/12 text-black text-xl ml-4 flex items-center">
+                  <p className="basis-11/12 text-black text-sm sm:text-xl ml-4 flex items-center">
                     Guyton Ed 13 Pg 339
                   </p>
                   <p className="basis-1/12 text-black flex items-center">
@@ -74,62 +74,62 @@ const Content = () => {
             </div>
           </div>
           {/* Explanation Box */}
-          <div className="flex gap-5">
-            <span className="block w-20 p-2 border shadow-lg rounded-lg text-red-900 bg-white text-center font-extrabold text-xl">
+          <div className="flex gap-3 sm:gap-5">
+            <span className="block w-10 sm:w-20 p-2 border shadow-lg rounded-lg text-red-900 bg-white text-center font-extrabold text-md sm:text-xl">
               B
             </span>
-            <button className="block w-full m-0 border shadow-lg rounded-lg relative z-0 bg-white hover:scale-x-[0.98] duration-300">
+            <button className="block w-full m-0 border shadow-lg rounded-lg relative z-0 bg-white hover:scale-x-[0.98] duration-300 text-sm sm:text-xl">
               <div
                 className="bg-lime-400 text-black text-center m-0 rounded-lg absolute h-full top-0 -z-10"
                 style={{ width: `${answerPercentage}%` }}
               />
               Reticulum
-              <p className="absolute right-4 top-2 bg-green-600 w-[50px] rounded-full text-white opacity-80">
+              <p className="absolute right-4 top-2 bg-green-600 w-[40px] sm:w-[50px] rounded-full text-white opacity-80 text-[12px] sm:text-xl">
                 {answerPercentage}%
               </p>
             </button>
           </div>
-          <div className="flex gap-5">
-            <span className="block w-20 p-2 border shadow-lg rounded-lg text-red-900 bg-white text-center font-extrabold text-xl">
+          <div className="flex gap-3 sm:gap-5">
+            <span className="block w-10 sm:w-20 p-2 border shadow-lg rounded-lg text-red-900 bg-white text-center font-extrabold text-md sm:text-xl">
               C
             </span>
-            <button className="block w-full m-0 border shadow-lg rounded-lg relative z-0 bg-white hover:scale-x-[0.98] duration-300">
+            <button className="block w-full m-0 border shadow-lg rounded-lg relative z-0 bg-white hover:scale-x-[0.98] duration-300 text-sm sm:text-xl">
               <div
                 className="bg-gray-300 text-black text-center m-0 rounded-lg absolute h-full top-0 -z-10"
                 style={{ width: `${answerPercentage}%` }}
               />
               Golgi apparatus
-              <p className="absolute right-4 top-2 bg-gray-500 w-[50px] rounded-full text-white opacity-100">
+              <p className="absolute right-4 top-2 bg-gray-500 w-[40px] sm:w-[50px] rounded-full text-white opacity-80 text-[12px] sm:text-xl">
                 {answerPercentage}%
               </p>
             </button>
           </div>
-          <div className="flex gap-5">
-            <span className="block w-20 p-2 border shadow-lg rounded-lg text-red-900 bg-white text-center font-extrabold text-xl">
+          <div className="flex gap-3 sm:gap-5">
+            <span className="block w-10 sm:w-20 p-2 border shadow-lg rounded-lg text-red-900 bg-white text-center font-extrabold text-md sm:text-xl">
               D
             </span>
-            <button className="block w-full m-0 border shadow-lg rounded-lg relative z-0 bg-white hover:scale-x-[0.98] duration-300">
+            <button className="block w-full m-0 border shadow-lg rounded-lg relative z-0 bg-white hover:scale-x-[0.98] duration-300 text-sm sm:text-xl">
               <div
                 className="bg-gray-300 text-black text-center m-0 rounded-lg absolute h-full top-0 -z-10"
                 style={{ width: `${answerPercentage}%` }}
               />
               Centrioles
-              <p className="absolute right-4 top-2 bg-gray-500 w-[50px] rounded-full text-white opacity-100">
+              <p className="absolute right-4 top-2 bg-gray-500 w-[40px] sm:w-[50px] rounded-full text-white opacity-80 text-[12px] sm:text-xl">
                 {answerPercentage}%
               </p>
             </button>
           </div>
-          <div className="flex gap-5">
-            <span className="block w-20 p-2 border shadow-lg rounded-lg text-red-900 bg-white text-center font-extrabold text-xl">
+          <div className="flex gap-3 sm:gap-5">
+            <span className="block w-10 sm:w-20 p-2 border shadow-lg rounded-lg text-red-900 bg-white text-center font-extrabold text-md sm:text-xl">
               E
             </span>
-            <button className="block w-full m-0 border shadow-lg rounded-lg relative z-0 bg-white hover:scale-x-[0.98] duration-300">
+            <button className="block w-full m-0 border shadow-lg rounded-lg relative z-0 bg-white hover:scale-x-[0.98] duration-300 text-sm sm:text-xl">
               <div
                 className="bg-gray-300 text-black text-center m-0 rounded-lg absolute h-full top-0 -z-10"
                 style={{ width: `${answerPercentage}%` }}
               />
               None
-              <p className="absolute right-4 top-2 bg-gray-500 w-[50px] rounded-full text-white opacity-100">
+              <p className="absolute right-4 top-2 bg-gray-500 w-[40px] sm:w-[50px] rounded-full text-white opacity-80 text-[12px] sm:text-xl">
                 {answerPercentage}%
               </p>
             </button>
@@ -171,13 +171,6 @@ const Content = () => {
           <h3 className="bg-darkPurple text-white font-normal pl-2">
             My Notes:
           </h3>
-          {/* <p className="pl-2">
-            This is dummy text for the notes added by users...This is dummy text
-            for the notes added by users...This is dummy text for the notes
-            added by users...This is dummy text for the notes added by
-            users...This is dummy text for the notes added by users...This is
-            dummy text for the notes added by users...
-          </p> */}
         <EditorComponent />
         </div>
       </div>

@@ -13,7 +13,8 @@ const BottomBar = () => {
   const [hoveredIconFirst, setHoveredIconFirst] = useState(null);
   const [hoveredIconSecond, setHoveredIconSecond] = useState(null);
   return (
-    <div className="relative">
+    <>
+    <div className="sm:relative">
       <div className="group fixed left-0 bottom-0 h-[70px] w-full transition-width duration-300 bg-blue-600 flex justify-between items-center gap-4 overflow-hidden z-10 p-2">
         {/* Section 1: Icons and Buttons */}
         <div className="flex items-center justify-around gap-2 w-full max-w-[50%] lg:max-w-[70%]">
@@ -105,6 +106,66 @@ const BottomBar = () => {
         </button>
       </div>
     </div>
+    <div className="relative sm:hidden">
+      <div className="group fixed left-0 bottom-0 h-[70px] w-full transition-width duration-300 bg-blue-600 flex justify-around items-center gap-2 overflow-hidden z-10 p-2">
+        {/* Icons and Labels */}
+        {[
+          { icon: <Suggestion />, label: "Suggest" },
+          { icon: <Skip />, label: "Skip" },
+          { icon: <Discuss />, label: "Discuss" },
+          { icon: <Pencil />, label: "Notes" },
+          { icon: <Bookmark />, label: "Bookmark" },
+          { icon: <Share />, label: "Share" },
+        ].map((item, idx) => (
+          <button
+            key={idx}
+            className="flex flex-col items-center justify-center text-white hover:text-blue-300 duration-300"
+          >
+            <span className="text-lg">{item.icon}</span>
+            <span className="text-xs mt-1">{item.label}</span>
+          </button>
+        ))}
+
+        {/* Arrows */}
+        <div className="flex items-center justify-center gap-4 mx-2">
+          <button className="cursor-pointer">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="white"
+              className="w-6 h-6"
+            >
+              <path
+                strokeWidth="3px"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+              />
+            </svg>
+          </button>
+          <button className="cursor-pointer">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="white"
+              className="w-6 h-6"
+            >
+              <path
+                strokeWidth="3px"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    </>
   );
 };
 
