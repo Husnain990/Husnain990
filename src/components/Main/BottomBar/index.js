@@ -107,8 +107,9 @@ const BottomBar = () => {
       </div>
     </div>
     <div className="relative sm:hidden">
-      <div className="group fixed left-0 bottom-0 h-[70px] w-full transition-width duration-300 bg-blue-600 flex justify-around items-center gap-2 overflow-hidden z-10 p-2">
+      <div className="group fixed left-0 bottom-0 h-[100px] sm:h-[70px] w-full transition-width duration-300 bg-blue-600 flex flex-col-reverse justify-around items-center gap-2 overflow-hidden z-10 p-2">
         {/* Icons and Labels */}
+        <div className="flex flex-row items-center justify-around w-full">
         {[
           { icon: <Suggestion />, label: "Suggest" },
           { icon: <Skip />, label: "Skip" },
@@ -125,6 +126,7 @@ const BottomBar = () => {
             <span className="text-xs mt-1">{item.label}</span>
           </button>
         ))}
+        </div>
 
         {/* Arrows */}
         <div className="flex items-center justify-center gap-4 mx-2">

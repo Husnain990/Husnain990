@@ -24,7 +24,7 @@ const Content = () => {
 
   const answerPercentage = 17;
   return (
-    <div className="flex w-full gap-4 mt-4 mr-4 lg:flex-nowrap flex-wrap pl-[44px] sm:pl-[64px] py-[80px]">
+    <div className="flex w-full gap-4 mt-4 mr-4 lg:flex-nowrap flex-wrap pl-[44px] sm:pl-[64px] pt-[60px] pb-[100px] sm:py-[80px]">
       {/* Question Section */}
       <div className="xl:w-3/4 lg:w-3/4 w-full">
         <p className="border mb-4 drop-shadow-md bg-white p-4 rounded shadow-md text-red-800">
