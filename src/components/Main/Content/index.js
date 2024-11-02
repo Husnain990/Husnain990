@@ -1,5 +1,5 @@
-'use client'
-import React, {useState} from "react";
+"use client";
+import React, { useState } from "react";
 
 // Image from Next
 import Image from "next/image";
@@ -14,30 +14,61 @@ import EditorComponent from "@/components/Editor";
 
 const Content = () => {
   const [open, setOpen] = useState(false);
-  
+  const [show, setShow] = useState({
+    show: true,
+    type: "hide",
+  });
+
   const handleOpen = () => {
     setOpen(true);
-  }
+  };
   const handleClose = () => {
     setOpen(false);
-  }
+  };
+
+  const handleShowToggle = (type) => {
+    if (type === "show") {
+      setShow({
+        show: true,
+        type: type,
+      });
+    } else {
+      setShow({
+        show: false,
+        type: type,
+      });
+    }
+  };
 
   const answerPercentage = 17;
   return (
     <div className="flex w-full gap-4 mt-4 mr-4 lg:flex-nowrap flex-wrap pl-[44px] sm:pl-[64px] pt-[60px] pb-[100px] sm:py-[80px]">
       {/* Question Section */}
       <div className="xl:w-3/4 lg:w-3/4 w-full">
-        <p className="border mb-4 drop-shadow-md bg-white p-4 rounded shadow-md text-red-800">
-          This is a dummy question showing font sizing and placement of text in
-          question card...This is a dummy question showing font sizing and
-          placement of text in question card...
-        </p>
+        <div className="border mb-4 drop-shadow-md bg-white dark:bg-darkModeBG dark:shadow-sm dark:shadow-white dark:border-none py-4 pl-6 pr-0 rounded shadow-md flex justify-between relative">
+          <p className="text-black dark:text-white text-xl font-semibold w-full max-w-[1000px]">
+            This is Question and it should be Bold and font slightly bigger as
+            compared to Options.
+          </p>
+          <Image
+            src="https://images.pexels.com/photos/139398/thermometer-headache-pain-pills-139398.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            width={100}
+            height={100}
+            className="h-full w-[100px] absolute right-0 top-0"
+          />
+        </div>
 
         <div className="space-y-4">
           {/* Explanation Box */}
           <div>
             <div className="flex gap-3 sm:gap-5">
-              <span className="block w-10 sm:w-20 p-2 border shadow-lg rounded-lg text-red-900 bg-white text-center font-extrabold text-md sm:text-xl">
+              <span
+                className="block w-10 sm:w-20 p-2 border shadow-lg rounded-lg text-red-900 bg-white text-center font-extrabold text-md sm:text-xl"
+                style={{
+                  background: answerPercentage < 50 ? "#991b1b" : "#a3e635",
+                  color: answerPercentage && "#fff",
+                }}
+              >
                 A
               </span>
               <button className="block w-full m-0 border shadow-lg rounded-lg relative z-0 bg-white hover:scale-x-[0.98] duration-300 text-sm sm:text-xl">
@@ -55,19 +86,27 @@ const Content = () => {
               <p className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-xl">
                 Explanation Box
               </p>
-              <div className="absolute bottom-2 w-[90%] sm:w-[97%] bg-white rounded-md">
-                <div className="flex gap-4 items-center h-10">
+              <div className="absolute bottom-2 w-[90%] sm:w-[97%] flex gap-4">
+                <div className="flex gap-4 items-center h-10 w-2/4 bg-white rounded-md">
                   <Image
                     src="https://images.pexels.com/photos/139398/thermometer-headache-pain-pills-139398.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                     width={30}
-                    height={10}
-                    className="ml-5 sm:ml-16"
+                    height={100}
+                    className="h-full"
                   />
                   <p className="basis-11/12 text-black text-sm sm:text-xl ml-4 flex items-center">
                     Guyton Ed 13 Pg 339
                   </p>
-                  <p className="basis-1/12 text-black flex items-center">
-                    open
+                </div>
+                <div className="flex gap-4 items-center h-10 w-2/4 bg-white rounded-md">
+                  <Image
+                    src="https://images.pexels.com/photos/139398/thermometer-headache-pain-pills-139398.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    width={30}
+                    height={10}
+                    className="h-full"
+                  />
+                  <p className="basis-11/12 text-black text-sm sm:text-xl ml-4 flex items-center">
+                    Last Aid : Myeloblastic Leukemia
                   </p>
                 </div>
               </div>
@@ -75,7 +114,13 @@ const Content = () => {
           </div>
           {/* Explanation Box */}
           <div className="flex gap-3 sm:gap-5">
-            <span className="block w-10 sm:w-20 p-2 border shadow-lg rounded-lg text-red-900 bg-white text-center font-extrabold text-md sm:text-xl">
+            <span
+              className="block w-10 sm:w-20 p-2 border shadow-lg rounded-lg text-red-900 bg-white text-center font-extrabold text-md sm:text-xl"
+              style={{
+                background: answerPercentage > 50 ? "#991b1b" : "#a3e635",
+                color: answerPercentage && "#fff",
+              }}
+            >
               B
             </span>
             <button className="block w-full m-0 border shadow-lg rounded-lg relative z-0 bg-white hover:scale-x-[0.98] duration-300 text-sm sm:text-xl">
@@ -136,12 +181,12 @@ const Content = () => {
           </div>
         </div>
 
-        <div className="mt-4 p-5 text-center text-gray-500 flex items-start justify-start gap-x-40 gap-y-10 border-l-4 border-blue-500 shadow-md flex-wrap">
+        <div className="mt-4 p-5 text-center bg-yellow-200 text-gray-500 flex items-start justify-start gap-x-24 gap-y-10 border-l-4 border-blue-500 shadow-md flex-wrap">
           <div className="group flex items-center gap-2 justify-start flex-row cursor-pointer">
             <FcBarChart className="w-[30px] h-[30px] transition-transform duration-300 group-hover:scale-[1.4]" />
             <div className="flex items-start justify-start flex-col">
-            <p>2547</p>
-            <p className="text-left">Users Attempted</p>
+              <p>2547</p>
+              <p className="text-left">Users Attempted</p>
             </div>
           </div>
           <div className="group flex items-center gap-2 justify-start flex-row cursor-pointer">
@@ -151,18 +196,25 @@ const Content = () => {
               <p className="text-left">Answered Correctly</p>
             </div>
           </div>
-          <div className="group flex items-center gap-2 justify-start flex-row cursor-pointer">
+          {/* <div className="group flex items-center gap-2 justify-start flex-row cursor-pointer">
             <FcAlarmClock className="w-[30px] h-[30px] transition-transform duration-300 group-hover:scale-[1.4]" />
             <div className="flex items-start justify-start flex-col">
               <p>06 secs</p>
               <p className="text-left">Time Spent</p>
             </div>
-          </div>
+          </div> */}
           <div className="group flex items-center gap-2 justify-start flex-row cursor-pointer">
-          <FcWorkflow className="w-[30px] h-[30px] transition-transform duration-300 group-hover:scale-[1.4]" />
-          <div className="flex items-start justify-start flex-col">
-            <p>2022</p>
-            <p className="text-left">Version</p>
+            <FcWorkflow className="w-[30px] h-[30px] transition-transform duration-300 group-hover:scale-[1.4]" />
+            <div className="flex items-start justify-start flex-col">
+              <p>2022</p>
+              <p className="text-left">Version</p>
+            </div>
+          </div>
+          <div className="group flex items-center gap-2 justify-start flex-row ml-20">
+            {/* <FcWorkflow className="w-[30px] h-[30px] transition-transform duration-300 group-hover:scale-[1.4]" /> */}
+            <div className="flex items-start justify-start flex-col">
+              <p>FCPS, 1 Med Aug 2024 (M)</p>
+              <p className="text-left">+ 18 more paders</p>
             </div>
           </div>
         </div>
@@ -171,12 +223,37 @@ const Content = () => {
           <h3 className="bg-darkPurple text-white font-normal pl-2">
             My Notes:
           </h3>
-        <EditorComponent />
+          <EditorComponent />
         </div>
       </div>
 
       {/* Right Sidebar */}
       <div className="xl:w-1/4 lg:w-3/12 w-full">
+        <div className="bg-white flex gap-6 rounded-full justify-between p-2 mb-4">
+          <button
+            className="text-lg w-full text-center rounded-full font-bold"
+            onClick={() => handleShowToggle("hide")}
+            style={{
+              background: show.type === "hide" ? "#4900bf" : "#ffffff",
+              color: show.type === "hide" ? "#ffffff" : "#000000"
+            }}
+          >
+            Hide
+          </button>
+          <button
+            className="text-lg w-full bg-white text-center rounded-full font-bold"
+            onClick={() => handleShowToggle("show")}
+            style={{
+              background: show.type === "show" ? "#4900bf" : "#ffffff",
+              color: show.type === "show" ? "#ffffff" : "#000000"
+            }}
+          >
+            Show
+          </button>
+        </div>
+        {
+          show.type === "show" && show.show === true &&
+        <>
         {/* Top Box */}
         <div className="bg-white border shadow-lg rounded transition-all duration-200 hover:shadow-2xl">
           <h2 className="bg-darkPurple text-white font-normal p-2 text-center">
@@ -208,7 +285,10 @@ const Content = () => {
           <h2 className="bg-darkPurple text-white font-normal p-2 text-center">
             Video Title here
           </h2>
-          <div className="aspect-w-16 aspect-h-9 bg-gray-300 cursor-pointer" onClick={handleOpen}>
+          <div
+            className="aspect-w-16 aspect-h-9 bg-gray-300 cursor-pointer"
+            onClick={handleOpen}
+          >
             <Image
               src="https://images.pexels.com/photos/5758468/pexels-photo-5758468.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
               height={100}
@@ -270,7 +350,8 @@ const Content = () => {
               </a>
             </div>
           </div>
-        </div>
+        </div></>
+        }
       </div>
       <Modal open={open} handleClose={handleClose} />
     </div>

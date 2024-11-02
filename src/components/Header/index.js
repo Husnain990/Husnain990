@@ -7,13 +7,16 @@ import { AiOutlinePauseCircle } from "react-icons/ai";
 import { AiFillWarning } from "react-icons/ai";
 import { Menu } from "@headlessui/react";
 import { HiDotsVertical } from "react-icons/hi";
+import { FaAdjust } from "react-icons/fa";
+import FormatSizeIcon from '@mui/icons-material/FormatSize';
 import MediCall from "@/assets/header/medicall.png";
 
 // Modals
 import Modal from "../General/Modals/FontSizeModal";
 import Image from "next/image";
 
-const Header = () => {
+const Header = (props) => {
+  const { toggleDarkMode } = props;
   const [open, setOpen] = useState(false);
   const [fontSize, setFontSize] = useState(16);
   const handleSizeChange = () => {
@@ -44,23 +47,27 @@ const Header = () => {
   return (
     <header className="z-10 fixed w-full flex justify-between items-center bg-darkPurple text-white px-6 py-3">
       <div className="flex items-center gap-1">
-        {formatCounter(counter).map((digit, index) => (
-          <div
-            key={index}
-            className="font-extrabold text-2xl text-darkPurple bg-white rounded w-6 flex items-center justify-center"
-          >
-            {index === 2 ? ":" : digit}
-          </div>
-        ))}
+        {formatCounter(counter).map((digit, index) => {
+          return (
+            <div
+              key={index}
+              className={`font-extrabold text-2xl text-darkPurple rounded w-6 flex items-center justify-center bg-white`}
+              style={{
+                background: index === 2 && "transparent",
+                color: index === 2 && "#fff",
+                fontSize: index === 2 && "35px",
+              }}
+            >
+              {index === 2 ? ":" : digit}
+            </div>
+          );
+        })}
       </div>
       <div className="flex font-bold lg:text-5xl sm:text-3xl items-center gap-2">
         <Image src={MediCall} alt="logo" className="w-full h-10" />
       </div>
       <div className="text-[20px] font-bold lg:text-[35px] hidden lg:block">
         20/200
-      </div>
-      <div className="hidden md:block">
-        <button onClick={handleOpen}>Text Size</button>
       </div>
       <div className="lg:hidden">
         <Menu as="div" className="relative inline-block text-left">
@@ -119,7 +126,7 @@ const Header = () => {
                   </button>
                 )}
               </Menu.Item>
-              <Menu.Item className="md:hidden">
+              <Menu.Item className="lg:hidden">
                 <button
                   onClick={handleOpen}
                   className="text-white bg-darkPurple w-full rounded-md p-1 mt-1"
@@ -132,7 +139,16 @@ const Header = () => {
         </Menu>
       </div>
 
-      <div className="hidden lg:flex md:space-x-2">
+      <div className="hidden lg:flex lg:items-center md:space-x-2 gap-4">
+      <button className="hover:scale-[1.1] transition-all duration-300">
+          <FaAdjust onClick={toggleDarkMode} className="w-[42px] h-[42px]" />
+        </button>
+        <button className="hidden lg:block hover:scale-[1.1] transition-all duration-300">
+          <FormatSizeIcon sx={{
+            width: "42px",
+            height: "42px"
+          }} onClick={handleOpen}/>
+        </button>
         <button className="hover:scale-[1.1] transition-all duration-300">
           <AiFillWarning className="fill-yellow-400 w-[42px] h-[42px]" />
         </button>
